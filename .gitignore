@@ -4,3 +4,7 @@
 
 /Vidly2026/bin
 /Vidly2026/obj/Debug
+/.vs
+/packages
+/Vidly2026/App_Data/aspnet-Vidly2026-20260118122403.mdf
+/Vidly2026/App_Data/aspnet-Vidly2026-20260118122403_log.ldf
