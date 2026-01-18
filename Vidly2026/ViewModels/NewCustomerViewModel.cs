@@ -10,5 +10,9 @@ namespace Vidly2026.ViewModels
     {
         public IEnumerable<MembershipType> MembershipTypes { get; set; }
         public Customer Customer { get; set; }
+        public string Title
+        {
+            get { return (Customer != null) ? "Edit" : "New"; }
+        }
     }
 }

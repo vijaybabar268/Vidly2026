@@ -22,6 +22,6 @@ textarea {
     max-width: 280px;
 }
 
-.form-group, .checkbox, .btn {
-    margin-top: 15px !important;
+.form-group, .checkbox {
+    margin-bottom: 15px !important;
 }
