@@ -1,9 +1,18 @@
-﻿@model Vidly2026.Models.Movie
+﻿@model Vidly2026.ViewModels.RandomMovieViewModel
 
 @{
     ViewBag.Title = "Random";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@Model.Name</h2>
+<h2>@Model.Movie.Name</h2>
+<ul>
+    @for (int i = 0; i < Model.Customers.Count; i++)
+    {
+        var customer = Model.Customers[i];
+        <li>
+            @customer.Name
+        </li>
+    }
+</ul>
 
