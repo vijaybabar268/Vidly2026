@@ -13,5 +13,16 @@
     {
         <li>Birthdate: @string.Format("{0: dd/MM/yyyy}", @Model.Birthdate)</li>
     }
+        <li>
+            Subscribed to Newsletter:
+            @if (Model.IsSubscribedToNewsletter)
+            {
+                <text>Yes</text>
+            }
+            else
+            {
+                <text>No</text>
+            }
+        </li>
 </ul>
 
