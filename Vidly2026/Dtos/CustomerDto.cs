@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using Vidly2026.Models;
 
 namespace Vidly2026.Dtos
 {
@@ -15,6 +16,8 @@ namespace Vidly2026.Dtos
         public string Name { get; set; }
 
         public bool IsSubscribedToNewsletter { get; set; }
+
+        public MembershipTypeDto MembershipType { get; set; }
 
         //[Min18YearsIfAMember]
         public DateTime? Birthdate { get; set; }
