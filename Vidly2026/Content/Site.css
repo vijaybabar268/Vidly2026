@@ -25,3 +25,11 @@ textarea {
 .form-group, .checkbox {
     margin-bottom: 15px !important;
 }
+
+.field-validation-error, .validation-summary-errors {
+    color: red;
+}
+
+.input-validation-error {
+    border: 2px solid red;
+}

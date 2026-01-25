@@ -38,7 +38,8 @@ namespace Vidly2026.Controllers
 
             var viewModel = new CustomerFormViewModel
             {
-                MembershipTypes = membershipTypes
+                MembershipTypes = membershipTypes,
+                Customer = new Customer()
             };
 
             return View("CustomerForm", viewModel);
@@ -48,6 +49,16 @@ namespace Vidly2026.Controllers
         [HttpPost]
         public ActionResult Save(Customer customer)
         {
+            if (!ModelState.IsValid)
+            {                
+                var viewModel = new CustomerFormViewModel
+                {
+                    MembershipTypes = _context.MembershipTypes.ToList(),
+                    Customer = customer
+                };
+                return View("CustomerForm", viewModel);
+            }
+
             if (customer.Id == 0)
                 _context.Customers.Add(customer);
             else
