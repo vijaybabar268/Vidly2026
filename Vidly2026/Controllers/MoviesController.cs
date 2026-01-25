@@ -38,7 +38,7 @@ namespace Vidly2026.Controllers
 
             var viewModel = new NewMovieViewModel
             {
-                Genres = genres                
+                Genres = genres
             };
 
             return View("MovieForm", viewModel);
@@ -46,11 +46,23 @@ namespace Vidly2026.Controllers
 
         // POST: Movies/Save
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Movie movie)
         {
-            if (movie.Id == 0)
+            movie.DateAdded = DateTime.UtcNow;
+
+            if (!ModelState.IsValid)
             {
-                movie.DateAdded = DateTime.UtcNow;
+                var viewModel = new NewMovieViewModel(movie)
+                {
+                    Genres = _context.Genres.ToList()
+                };
+
+                return View("MovieForm", viewModel);
+            }
+
+            if (movie.Id == 0)
+            {                
                 _context.Movies.Add(movie);
             }
             else
@@ -75,10 +87,9 @@ namespace Vidly2026.Controllers
 
             var genres = _context.Genres.ToList();
 
-            var viewModel = new NewMovieViewModel
+            var viewModel = new NewMovieViewModel(movie)
             {
-                Genres = genres,
-                Movie = movie                
+                Genres = genres
             };
 
             return View("MovieForm", viewModel);

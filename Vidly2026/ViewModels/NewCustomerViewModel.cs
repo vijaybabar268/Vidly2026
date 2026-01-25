@@ -12,7 +12,7 @@ namespace Vidly2026.ViewModels
         public Customer Customer { get; set; }
         public string Title
         {
-            get { return (Customer != null) ? "Edit" : "New"; }
+            get { return (Customer.Id != 0) ? "Edit" : "New"; }
         }
     }
 }

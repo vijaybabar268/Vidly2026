@@ -20,10 +20,12 @@ namespace Vidly2026.Models
         public DateTime ReleaseDate { get; set; }
 
         [Display(Name="Number in Stock")]
+        [Range(1, 20)]
         public byte NumberInStock { get; set; }
 
         public Genre Genre { get; set; }
 
+        [Required]
         [Display(Name="Genre")]
         public byte GenreId { get; set; }
     }
