@@ -28,10 +28,14 @@ namespace Vidly2026.Controllers
         {
             var movies = _context.Movies.Include(g => g.Genre).ToList();
 
-            return View(movies);
+            if (User.IsInRole(RoleName.CanManageMovies))
+                return View("List", movies);
+            else
+                return View("ReadOnlyList", movies);
         }
 
         // GET: Movies/New
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult New()
         {
             var genres = _context.Genres.ToList();
@@ -47,6 +51,7 @@ namespace Vidly2026.Controllers
         // POST: Movies/Save
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Save(Movie movie)
         {
             movie.DateAdded = DateTime.UtcNow;
@@ -81,6 +86,7 @@ namespace Vidly2026.Controllers
         }
 
         // GET: Movies/Edit/1
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Edit(int id)
         {
             var movie = _context.Movies.FirstOrDefault(m => m.Id == id);
@@ -97,6 +103,7 @@ namespace Vidly2026.Controllers
 
         // POST
         [HttpPost]
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Delete(int id)
         {
             var movie = _context.Movies.FirstOrDefault(m => m.Id == id);
