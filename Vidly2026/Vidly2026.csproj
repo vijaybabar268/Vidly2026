@@ -181,6 +181,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\api\CustomersController.cs" />
     <Compile Include="Controllers\api\MoviesController.cs" />
+    <Compile Include="Controllers\api\NewRentalsController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -188,6 +189,7 @@
     <Compile Include="Dtos\CustomerDto.cs" />
     <Compile Include="Dtos\MembershipTypeDto.cs" />
     <Compile Include="Dtos\MovieDto.cs" />
+    <Compile Include="Dtos\NewRentalDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -239,6 +241,10 @@
     <Compile Include="Migrations\202601260942310_AddDrivingLinceceToAppUser.Designer.cs">
       <DependentUpon>202601260942310_AddDrivingLinceceToAppUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202603191640306_AddRentals.cs" />
+    <Compile Include="Migrations\202603191640306_AddRentals.Designer.cs">
+      <DependentUpon>202603191640306_AddRentals.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -254,6 +260,7 @@
     <Compile Include="Models\Min18YearsIfAMember.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\RegisterViewModel.cs" />
+    <Compile Include="Models\Rental.cs" />
     <Compile Include="Models\ResetPasswordViewModel.cs" />
     <Compile Include="Models\RoleName.cs" />
     <Compile Include="Models\SendCodeViewModel.cs" />
@@ -559,6 +566,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202601260942310_AddDrivingLinceceToAppUser.resx">
       <DependentUpon>202601260942310_AddDrivingLinceceToAppUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202603191640306_AddRentals.resx">
+      <DependentUpon>202603191640306_AddRentals.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
