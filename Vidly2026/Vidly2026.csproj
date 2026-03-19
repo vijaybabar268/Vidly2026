@@ -245,6 +245,10 @@
     <Compile Include="Migrations\202603191640306_AddRentals.Designer.cs">
       <DependentUpon>202603191640306_AddRentals.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202603191706450_AddedNumberAvailableColumn.cs" />
+    <Compile Include="Migrations\202603191706450_AddedNumberAvailableColumn.Designer.cs">
+      <DependentUpon>202603191706450_AddedNumberAvailableColumn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -569,6 +573,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202603191640306_AddRentals.resx">
       <DependentUpon>202603191640306_AddRentals.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202603191706450_AddedNumberAvailableColumn.resx">
+      <DependentUpon>202603191706450_AddedNumberAvailableColumn.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
