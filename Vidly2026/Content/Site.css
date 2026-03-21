@@ -27,10 +27,27 @@ textarea {
     margin-bottom: 15px !important;
 }
 
-.field-validation-error, .validation-summary-errors {
+.field-validation-error, 
+.validation-summary-errors,
+label.error {
     color: red;
 }
 
-.input-validation-error {
+.input-validation-error,
+input.error {
     border: 2px solid red;
+}
+
+.navbar-inverse {
+    background-color: #FF3B77;
+    border-color: #FF8598;
+}
+
+.navbar-brand,
+.navbar-nav li a {
+    color: #fff !important;
+}
+
+.btn {
+    border-radius: 20px;
 }

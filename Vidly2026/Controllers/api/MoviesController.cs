@@ -21,11 +21,18 @@ namespace Vidly2026.Controllers.api
         }
 
         // GET: /api/movies
-        public IHttpActionResult GetMovies()
+        public IHttpActionResult GetMovies(string query = null)
         {
-            var movies = _context.Movies.Include(g => g.Genre).ToList().Select(Mapper.Map<Movie, MovieDto>);
+            var moviesQuery = _context.Movies
+                .Include(g => g.Genre)
+                .Where(m => m.NumberAvailable > 0).ToList();
 
-            return Ok(movies);
+            if (!string.IsNullOrWhiteSpace(query))
+            {
+                moviesQuery = moviesQuery.Where(m => m.Name.ToLower().Contains(query.ToLower())).ToList();
+            }
+
+            return Ok(moviesQuery.ToList().Select(Mapper.Map<Movie, MovieDto>));
         }
 
         // GET: /api/movies/1

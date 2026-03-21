@@ -21,7 +21,7 @@ namespace Vidly2026.Controllers.api
         [HttpPost]
         public IHttpActionResult CreateNewRentals(NewRentalDto newRental)
         {
-            if (newRental.MovieIds.Count <= 0)
+             if (newRental.MovieIds.Count <= 0)
                 return BadRequest("No Movie Ids have been given.");
 
             var customer = _context.Customers.SingleOrDefault(c => c.Id == newRental.CustomerId);
